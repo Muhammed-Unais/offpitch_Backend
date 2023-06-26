@@ -37,6 +37,7 @@ if (process.env.NODE_ENV === "development") app.use(morgan("dev"));
 connectDatbase();
 
 // api
+app.get("/", (req, res)=>res.send("app running"));
 app.use("/api/auth", authRoute);
 app.use("/api/user", userAuthorization, userRoute);
 app.use("/api/admin", adminAuthorization, adminRoute);
